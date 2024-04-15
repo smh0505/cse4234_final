@@ -1,8 +1,10 @@
 import { useState } from "react";
-import Search from "./Search.jsx"
+import Search from "./Search.jsx";
+import SearchResults from "./SearchResults.jsx";
 
 export default function App() {
   const [count, setCount] = useState(0);
+  const [result, setResult] = useState([]);
 
   const populate = () => {
     fetch("http://localhost:5050/populate", {
@@ -10,6 +12,10 @@ export default function App() {
     }).then(e => e.json()).then(data => {
       if (data.success) setCount(data.count)
     })
+  }
+
+  const updateResult = (data) => {
+    setResult(data)
   }
 
   return (
@@ -24,9 +30,10 @@ export default function App() {
 
       <h1> Group 6 Recipe Finder!</h1>
 
-
       <main>
-        <Search></Search>
+        <Search onResult={updateResult}></Search>
+        <span>{result.length} recipes found.</span>
+        <SearchResults results={result}></SearchResults>
       </main>
     </>
   );

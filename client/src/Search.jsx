@@ -1,15 +1,13 @@
 import { useState } from "react"
-import SearchResults from "./SearchResults.jsx"
 
-export default function Search() {
+export default function Search({onResult}) {
   const [query, setQuery] = useState("")
-  const [result, setResult] = useState([])
 
   const search = (e) => {
     e.preventDefault()
     fetch(`http://localhost:5050/search?query=${query}`)
       .then(res => res.json())
-      .then(data => setResult(data))
+      .then(data => onResult(data))
   }
 
   return <>
@@ -17,7 +15,5 @@ export default function Search() {
       <input type="text" name="query" value={query} onChange={e => setQuery(e.target.value)} />
       <input type="submit" value="Submit" />
     </form>
-    <span>{result.length} recipes found.</span>
-    <SearchResults results={result}></SearchResults>
   </>
 }
