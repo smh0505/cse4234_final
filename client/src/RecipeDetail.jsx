@@ -1,8 +1,8 @@
-import "./RecipeCard.css";
+import './RecipeDetail.css'
 
 const regex = /P(?:([.,\d]+)D)?T?(?:([.,\d]+)H)?(?:([.,\d]+)M)?/;
 
-export default function RecipeCard({ recipe, onDetail }) {
+export default function RecipeDetail({ recipe }) {
   const getTime = (time) => {
     if (!time) return "N/A";
 
@@ -21,23 +21,23 @@ export default function RecipeCard({ recipe, onDetail }) {
     );
   };
 
-  const openPage = () => {
-    onDetail(recipe)
-  }
-
   return (
     <>
-      <article>
-        <img src={recipe.image} loading="lazy" />
-        <h3>{recipe.name}</h3>
+      <article class="full-detail">
+        <img src={recipe.image} />
+        <h1>{recipe.name}</h1>
         <p>
           <strong>Cook Time</strong>: {getTime(recipe.cookTime)} <br />
           <strong>Prep Time</strong>: {getTime(recipe.prepTime)} <br />
           <strong>Yield</strong>: {recipe.recipeYield || "N/A"}
         </p>
-        <footer>
-          <button onClick={openPage}>View Recipe</button>
-        </footer>
+        <p>{recipe.description}</p>
+        <strong>Ingredients</strong>
+        <fieldset>
+          <ul>
+            {recipe?.ingredients.map(item => <li>{item}</li>)}
+          </ul>
+        </fieldset>
       </article>
     </>
   );

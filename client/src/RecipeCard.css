@@ -1,6 +1,6 @@
 article {
   display: block;
-  width: 320px;
+  width: 19%;
   height: 480px;
   background-color: white;
   border: 2px solid black;
@@ -21,4 +21,10 @@ article h3 {
 
 article p {
   margin-inline: 1rem;
+}
+
+@media (max-width: 768px) {
+  article {
+    width: 100%;
+  }
 }
