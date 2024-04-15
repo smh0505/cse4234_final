@@ -24,7 +24,7 @@ export default function App() {
         {count ? (
           <span>{count} recipe(s) successfully added to the database</span>
         ) : (
-          <button onClick={populate}>Populate DB</button>
+          <button class="button" onClick={populate}>Populate DB</button>
         )}
       </header>
 

@@ -13,7 +13,7 @@ export default function Search({onResult}) {
   return <>
     <form onSubmit={search}>
       <input type="text" name="query" value={query} onChange={e => setQuery(e.target.value)} />
-      <input type="submit" value="Submit" />
+      <input class="button" type="submit" value="Submit" />
     </form>
   </>
 }
