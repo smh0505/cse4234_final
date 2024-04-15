@@ -21,6 +21,10 @@ export default function App() {
           <button onClick={populate}>Populate DB</button>
         )}
       </header>
+
+      <h1> Group 6 Recipe Finder!</h1>
+
+
       <main>
         <Search></Search>
       </main>

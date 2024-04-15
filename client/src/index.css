@@ -1,0 +1,26 @@
+header {
+  text-align: right;
+}
+
+h1 {
+  font-style: italic;
+  background-color: #ffe483;
+  color: black;
+  text-align: center;
+}
+
+main {
+  text-align: center;
+}
+
+body {
+  background-color: #86f861;
+  font-family: Segoe UI, Roboto, Helvetica, Arial, serif;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
