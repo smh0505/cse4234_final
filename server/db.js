@@ -25,7 +25,13 @@ export const migrate = async () => {
 }
 
 export const getDocs = async (filter) => {
-  return await Recipe.find(filter)
+  return await Recipe.find({
+    $or: [
+      { name: { $regex: RegExp(filter, "i") } },
+      { description: { $regex: RegExp(filter, "i") } },
+      { ingredients: { $regex: RegExp(filter, "i") } },
+    ]
+  })
 }
 
 export const start = () => {

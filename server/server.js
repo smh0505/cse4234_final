@@ -16,8 +16,8 @@ app.post("/populate", async (_, res) => {
   })
 })
 
-app.get("/", async (_, res) => {
-  res.send(await getDocs({}))
+app.get("/search", async (req, res) => {
+  res.send(await getDocs(req.query.query))
 })
 
 app.listen(PORT, () => {
