@@ -15,7 +15,7 @@ export default function Search() {
   return <>
     <form onSubmit={search}>
       <input type="text" name="query" value={query} onChange={e => setQuery(e.target.value)} />
-      <input type="submit" value="Submit" />
+      <input class="button" type="submit" value="Submit" />
     </form>
     <span>{result.length} recipes found.</span>
     <SearchResults results={result}></SearchResults>
