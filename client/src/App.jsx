@@ -8,15 +8,17 @@ export default function App() {
 
   const populate = () => {
     fetch("http://localhost:5050/populate", {
-      method: "post"
-    }).then(e => e.json()).then(data => {
-      if (data.success) setCount(data.count)
+      method: "post",
     })
-  }
+      .then((e) => e.json())
+      .then((data) => {
+        if (data.success) setCount(data.count);
+      });
+  };
 
   const updateResult = (data) => {
-    setResult(data)
-  }
+    setResult(data);
+  };
 
   return (
     <>
@@ -24,7 +26,9 @@ export default function App() {
         {count ? (
           <span>{count} recipe(s) successfully added to the database</span>
         ) : (
-          <button class="button" onClick={populate}>Populate DB</button>
+          <button className="button" onClick={populate}>
+            Populate DB
+          </button>
         )}
       </header>
 

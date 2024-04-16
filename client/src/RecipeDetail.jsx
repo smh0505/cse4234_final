@@ -1,4 +1,4 @@
-import './RecipeDetail.css'
+import "./RecipeDetail.css";
 
 const regex = /P(?:([.,\d]+)D)?T?(?:([.,\d]+)H)?(?:([.,\d]+)M)?/;
 
@@ -23,7 +23,7 @@ export default function RecipeDetail({ recipe }) {
 
   return (
     <>
-      <article class="full-detail">
+      <article className="full-detail">
         <img src={recipe.image} />
         <h1>{recipe.name}</h1>
         <p>
@@ -35,7 +35,9 @@ export default function RecipeDetail({ recipe }) {
         <strong>Ingredients</strong>
         <fieldset>
           <ul>
-            {recipe?.ingredients.map(item => <li>{item}</li>)}
+            {recipe?.ingredients.map((item) => (
+              <li>{item}</li>
+            ))}
           </ul>
         </fieldset>
       </article>
