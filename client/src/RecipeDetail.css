@@ -1,0 +1,17 @@
+.full-detail {
+  width: min(100%, 768px);
+  height: max-content;
+}
+
+.full-detail img {
+  height: 100%;
+}
+
+.full-detail fieldset {
+  border-radius: 1rem;
+  margin: 0.5rem;
+}
+
+.full-detail li {
+  text-align: left;
+}
